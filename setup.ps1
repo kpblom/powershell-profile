@@ -12,7 +12,7 @@ if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
             }
         }
 
-         Invoke-RestMethod https://github.com/ChrisTitusTech/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+         Invoke-RestMethod https://github.com/kpblom/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
          Write-Host "The profile @ [$PROFILE] has been created."
      }
      catch {
@@ -22,7 +22,7 @@ if (-not(Test-Path -Path $PROFILE -PathType Leaf)) {
 # If the file already exists, show the message and do nothing.
  else {
 		 Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1
-		 Invoke-RestMethod https://github.com/ChrisTitusTech/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+		 Invoke-RestMethod https://github.com/kpblom/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
 		 Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
  }
 & $profile
@@ -39,4 +39,4 @@ Invoke-RestMethod https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1
 
 # Choco install
 #
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+#Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
